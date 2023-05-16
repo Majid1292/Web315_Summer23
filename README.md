@@ -5,12 +5,12 @@ As you can see thid is a **bold** text
 
 This is my list : 
 
-1.First item
+- First item
 
-2.Second item
+- Second item
 
-3.Third item
+- Third item
 
-4.Fourth item
+- Fourth item
 
  
