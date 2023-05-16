@@ -7,6 +7,9 @@ This is my list :
 
 - First item
 
+    - 1.2
+    - 1.3
+
 - Second item
 
 - Third item
