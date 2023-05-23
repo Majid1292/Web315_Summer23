@@ -4,6 +4,8 @@
     ViewData["Title"] = "Home page";
     var Username = "Ali";
     var year =2021;
+    var people= new string[] {"John", "Mary", "Sarah"};
+    var j=1;
 }
 
 
@@ -14,6 +16,17 @@
     <h4>Current date is : @DateTime.Now</h4>
     <h5>@year is a leap year : @DateTime.IsLeapYear(@year)</h5>
     <h5> Last week this time : @(DateTime.Now - TimeSpan.FromDays(14))</h5>
+
+    @for (var i=1; i <= people.Length ; i++) {
+        <p>Name_@i : @people[i-1]</p>
+    }
+
+    
+    @foreach (var person in people) {
+        <p>Name_@j : @person</p>
+        j++;
+    }
+    
 
 </div>
 

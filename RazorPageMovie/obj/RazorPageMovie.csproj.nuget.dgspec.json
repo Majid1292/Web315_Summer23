@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\MAFSHAR\\WEB315_SEC001_S23\\Web315_Summer23\\RazorPageMovie\\RazorPageMovie.csproj": {}
+    "C:\\Users\\MAFSHAR\\Documents\\GitHub\\Web315_Summer23\\RazorPageMovie\\RazorPageMovie.csproj": {}
   },
   "projects": {
-    "C:\\Users\\MAFSHAR\\WEB315_SEC001_S23\\Web315_Summer23\\RazorPageMovie\\RazorPageMovie.csproj": {
+    "C:\\Users\\MAFSHAR\\Documents\\GitHub\\Web315_Summer23\\RazorPageMovie\\RazorPageMovie.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MAFSHAR\\WEB315_SEC001_S23\\Web315_Summer23\\RazorPageMovie\\RazorPageMovie.csproj",
+        "projectUniqueName": "C:\\Users\\MAFSHAR\\Documents\\GitHub\\Web315_Summer23\\RazorPageMovie\\RazorPageMovie.csproj",
         "projectName": "RazorPageMovie",
-        "projectPath": "C:\\Users\\MAFSHAR\\WEB315_SEC001_S23\\Web315_Summer23\\RazorPageMovie\\RazorPageMovie.csproj",
+        "projectPath": "C:\\Users\\MAFSHAR\\Documents\\GitHub\\Web315_Summer23\\RazorPageMovie\\RazorPageMovie.csproj",
         "packagesPath": "C:\\Users\\MAFSHAR\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MAFSHAR\\WEB315_SEC001_S23\\Web315_Summer23\\RazorPageMovie\\obj\\",
+        "outputPath": "C:\\Users\\MAFSHAR\\Documents\\GitHub\\Web315_Summer23\\RazorPageMovie\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\MAFSHAR\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\MAFSHAR\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -39,6 +37,26 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.*, )"
+            },
+            "Microsoft.EntityFrameworkCore.SQLite": {
+              "target": "Package",
+              "version": "[5.*, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.*, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[5.*, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -57,7 +75,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.411\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\dotnet5\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
         }
       }
     }
