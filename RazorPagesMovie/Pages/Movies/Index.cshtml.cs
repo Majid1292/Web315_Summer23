@@ -18,11 +18,22 @@ namespace RazorPagesMovie.Pages_Movies
             _context = context;
         }
 
+        [BindProperty(SupportsGet = true)]
+        public string SearchString { get; set; }
+
         public IList<Movie> Movie { get;set; }
 
         public async Task OnGetAsync()
         {
-            Movie = await _context.Movie.ToListAsync();
+             var movies = from m in _context.Movie
+                 select m;
+            if (!string.IsNullOrEmpty(SearchString))
+            {
+                movies = movies.Where(s => s.Title.Contains(SearchString));
+            }
+
+            Movie = await movies.ToListAsync();
+            //Movie = await _context.Movie.ToListAsync();
         }
     }
 }
