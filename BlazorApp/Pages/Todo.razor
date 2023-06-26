@@ -10,7 +10,9 @@
         <li>
             <input type="checkbox" @bind="item.IsDone"> @item.Title
             <button @onclick="(e) => AddSubItem(item)" >Add Sub Items</button>
+            
             @if (item.SubItems != null) {
+                <span># of SubItem: @item.SubItems.Count()</span>
                 <ul>
                 @foreach (var subitem in item.SubItems) {
                     <li>
@@ -40,9 +42,12 @@
 
     private void AddSubItem(TodoItem currentItem)
     {
-        if (currentItem.SubItems == null) currentItem.SubItems = new List<string>();
-        currentItem.SubItems.Add(newTodo);
-        newTodo="";
+        if (!string.IsNullOrWhiteSpace(newTodo))
+        {
+            if (currentItem.SubItems == null) currentItem.SubItems = new List<string>();
+            currentItem.SubItems.Add(newTodo);
+            newTodo="";
+        }
     }
 
     public class TodoItem 
