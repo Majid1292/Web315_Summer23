@@ -8,15 +8,15 @@
     @foreach (var item in todos)
     {
         <li>
-            <input type="checkbox" @bind="item.IsDone"> @item.Title
+            <input type="checkbox" @onclick="(e) => UpdateIsDone(item)" @bind="item.IsDone"> @item.Title
             <button @onclick="(e) => AddSubItem(item)" >Add Sub Items</button>
             
             @if (item.SubItems != null) {
-                <span># of SubItem: @item.SubItems.Count()</span>
+                <span># of SubItem: @item.SubItems.Count(e => !e.SubIsDone)</span>
                 <ul>
                 @foreach (var subitem in item.SubItems) {
                     <li>
-                        @subitem
+                        <input type="checkbox" @bind="subitem.SubIsDone"> @subitem.SubTitle
                     </li>
                 }
                 </ul>
@@ -44,16 +44,33 @@
     {
         if (!string.IsNullOrWhiteSpace(newTodo))
         {
-            if (currentItem.SubItems == null) currentItem.SubItems = new List<string>();
-            currentItem.SubItems.Add(newTodo);
+            if (currentItem.SubItems == null) currentItem.SubItems = new List<TodoSubItems>();
+            currentItem.SubItems.Add(new TodoSubItems {SubTitle = newTodo});
             newTodo="";
         }
+    }
+
+    private void UpdateIsDone(TodoItem currentItem)
+    {
+        if (currentItem.SubItems != null) {
+            foreach (var subitem in currentItem.SubItems) {
+            subitem.SubIsDone = true;
+        }
+
+        }
+        
     }
 
     public class TodoItem 
     {
         public string Title {get; set;}
         public bool IsDone {get; set;}
-        public List<string> SubItems {get; set;}
+        public List<TodoSubItems> SubItems {get; set;}
+    }
+
+    public class TodoSubItems 
+    {
+        public string SubTitle {get; set;}
+        public bool SubIsDone {get; set;}
     }
 }
